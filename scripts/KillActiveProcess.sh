@@ -1,4 +1,4 @@
 #!/bin/bash
 
 PID="$(hyprctl activewindow -j | jq '.pid')"
-kill -9 "$PID"
+kill -9 "$PID" || sudo -u streaming kill -9 "$PID"
