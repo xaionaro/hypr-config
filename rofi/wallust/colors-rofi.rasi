@@ -28,22 +28,22 @@ background: rgba(0,0,0,0.7);
 foreground: #EDDAF2;
 border-color: #B168C7;
 
-color0: #413E47;
-color1: #1E1542;
-color2: #3C2465;
-color3: #533267;
-color4: #854E95;
-color5: #854E95;
-color6: #9870A3;
-color7: #DCC2E4;
-color8: #9A88A0;
-color9: #281C58;
-color10: #503187;
-color11: #6F4389;
-color12: #B168C7;
-color13: #B168C7;
-color14: #CA95DA;
-color15: #DCC2E4;
+color0: #003E47;
+color1: #151542;
+color2: #002465;
+color3: #003267;
+color4: #004E95;
+color5: #004E95;
+color6: #0070A3;
+color7: #00C2E4;
+color8: #0088A0;
+color9: #001C58;
+color10: #003187;
+color11: #434389;
+color12: #0068C7;
+color13: #0068C7;
+color14: #0095DA;
+color15: #00C2E4;
 
 
 }
