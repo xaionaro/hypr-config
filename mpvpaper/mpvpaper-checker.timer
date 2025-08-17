@@ -1,0 +1,12 @@
+
+[Unit]
+Description=Run mpvpaper memory check every 5 minutes
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+Persistent=true
+
+[Install]
+WantedBy=default.target
+

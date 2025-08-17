@@ -1,0 +1,18 @@
+
+[Unit]
+Description=mpvpaper for the back monitor
+After=graphical-session.target wayland-session.target
+Wants=wayland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mpvpaper -o 'no-audio --loop=inf' HDMI-A-3 ${HOME}/.dwm/particle_flares.mkv
+Restart=on-failure
+RestartSec=5
+StandardOutput=null
+StandardError=journal
+PassEnvironment=WAYLAND_DISPLAY XDG_RUNTIME_DIR DBUS_SESSION_BUS_ADDRESS HYPRLAND_INSTANCE_SIGNATURE
+
+[Install]
+WantedBy=default.target
+

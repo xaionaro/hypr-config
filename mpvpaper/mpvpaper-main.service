@@ -1,0 +1,18 @@
+
+[Unit]
+Description=mpvpaper for the main monitors
+After=graphical-session.target wayland-session.target
+Wants=wayland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mpvpaper -o 'no-audio --shuffle --loop-file=100 --loop-playlist=inf' DP-2,HDMI-A-2,DP-3 ${HOME}/.config/wallpapers/
+Restart=on-failure
+RestartSec=5
+StandardOutput=null
+StandardError=journal
+PassEnvironment=WAYLAND_DISPLAY XDG_RUNTIME_DIR DBUS_SESSION_BUS_ADDRESS HYPRLAND_INSTANCE_SIGNATURE
+
+[Install]
+WantedBy=default.target
+

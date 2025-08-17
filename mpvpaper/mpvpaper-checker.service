@@ -1,0 +1,7 @@
+[Unit]
+Description=mpvpaper restarter to mitigate the memory leak
+
+[Service]
+Type=oneshot
+ExecStart=bash -x ${HOME}/.config/hypr/mpvpaper/mpvpaper-check-memory.sh
+
