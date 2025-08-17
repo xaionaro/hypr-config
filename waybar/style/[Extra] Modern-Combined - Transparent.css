@@ -107,7 +107,7 @@ tooltip {
 }
 
 .modules-center {
-    background-color: @background-module;
+    background-color: rgba(0,0,0,0.5);
     border-radius: 0px 0px 45px 45px;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -241,7 +241,7 @@ tooltip {
 #custom-hypridle,
 #custom-lock,
 #idle_inhibitor {
-    color: @teal;
+    color: #464696;
 }
 
 #custom-weather,
@@ -263,11 +263,11 @@ tooltip {
 /*-----Indicators----*/
 #custom-hypridle.notactive,
 #idle_inhibitor.activated {
-	color: #39FF14;
+	color: @lavender;
 }
 
 #clock {
-	color: @sapphire;
+	color: white;
     border-radius: 15px;
 }
 
@@ -276,4 +276,5 @@ tooltip {
 }
 
 #custom-swaync{
-    color: #ffd700;}
+    color: #ffd700;
+}
