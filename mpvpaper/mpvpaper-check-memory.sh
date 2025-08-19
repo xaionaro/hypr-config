@@ -13,6 +13,6 @@ while read -r PID RSS; do
 	else
 		MPVPAPER_SUFFIX='-back'
 	fi
-	systemctl --user restart mpvpaper-main.service
+	systemctl --user restart mpvpaper"$MPVPAPER_SUFFIX".service
 done
 

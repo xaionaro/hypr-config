@@ -6,7 +6,7 @@ Wants=wayland-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/mpvpaper -o 'no-audio --shuffle --loop-file=100 --loop-playlist=inf' DP-2,HDMI-A-2,DP-3 ${HOME}/.config/wallpapers/
+ExecStart=%h/.config/hypr/mpvpaper/mpvpaper-main.sh
 Restart=on-failure
 RestartSec=5
 StandardOutput=null

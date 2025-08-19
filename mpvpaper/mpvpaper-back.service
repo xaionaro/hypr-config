@@ -6,7 +6,7 @@ Wants=wayland-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/mpvpaper -o 'no-audio --loop=inf' HDMI-A-3 ${HOME}/.dwm/particle_flares.mkv
+ExecStart=%h/.config/hypr/mpvpaper/mpvpaper-back.sh
 Restart=on-failure
 RestartSec=5
 StandardOutput=null
