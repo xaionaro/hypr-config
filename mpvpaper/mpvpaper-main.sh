@@ -17,7 +17,8 @@ while true; do
     if ! [[ -f "$FILEPATH.frame0.png" ]]; then
         ffmpeg -i "$FILEPATH" -frames:v 1 "$FILEPATH.frame0.png"
     fi
-    swww img --transition-fps 60 --transition-duration 1 --transition-type any --transition-bezier .43,1.19,1,.4 --outputs "$OUTPUTS" "$FILEPATH.frame0.png"
+    swww img --transition-fps 60 --transition-duration 15 --transition-type fade --outputs "$OUTPUTS" "$FILEPATH.frame0.png"
+    sleep 4 &
     if ! [[ -f "$FILEPATH.frame_eof.png" ]]; then
         ffmpeg -sseof -1 -i "$FILEPATH" -update 1 "$FILEPATH.frame_eof.png"
     fi
@@ -26,8 +27,9 @@ while true; do
     fi
     FILE_LENGTH="$(cat "$FILEPATH.length")"
     REPEATS="$(echo "($TARGET_LENGTH + $FILE_LENGTH - 1) / $FILE_LENGTH" | bc)"
+    wait
     (
-        sleep 10
+        
         swww img --transition-type none --transition-duration 0 --outputs "$OUTPUTS" "$FILEPATH.frame_eof.png"
     ) &
     /usr/local/bin/mpvpaper -o "input-ipc-server=/tmp/mpvpaper-main.sock --no-audio --loop-playlist=$REPEATS" "$OUTPUTS" "$FILEPATH"
