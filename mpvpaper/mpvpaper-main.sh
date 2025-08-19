@@ -25,7 +25,7 @@ while true; do
         ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$FILEPATH" > "$FILEPATH.length"
     fi
     FILE_LENGTH="$(cat "$FILEPATH.length")"
-    REPEATS="$(echo "$TARGET_LENGTH / $FILE_LENGTH" | bc)"
+    REPEATS="$(echo "($TARGET_LENGTH + $FILE_LENGTH - 1) / $FILE_LENGTH" | bc)"
     (
         sleep 10
         swww img --transition-type none --transition-duration 0 --outputs "$OUTPUTS" "$FILEPATH.frame_eof.png"
