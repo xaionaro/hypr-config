@@ -12,7 +12,7 @@ if [[ ! -f "$config_file" ]]; then
 fi
 
 # Process the config file in memory, removing the $ and fixing spaces
-config_content=$(sed 's/\$//g' "$config_file" | sed 's/ = /=/')
+config_content=$(sed 's/\$//g' "$config_file" | sed -re 's/ = (.*)/="\1"/')
 
 # Source the modified content directly from the variable
 eval "$config_content"
