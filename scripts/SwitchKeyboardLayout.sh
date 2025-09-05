@@ -1,6 +1,4 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# This is for changing kb_layouts. Set kb_layouts in $settings_file
 
 layout_file="$HOME/.cache/kb_layout"
 settings_file="$HOME/.config/hypr/UserConfigs/UserSettings.conf"
@@ -12,7 +10,7 @@ ignore_patterns=(
   "Bluetooth Speaker" 
   "Other Device 
   Name"
-  )
+)
 
 
 # Create layout file with default layout if it does not exist
