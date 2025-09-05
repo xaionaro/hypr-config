@@ -6,34 +6,34 @@ music_icon="$HOME/.config/swaync/icons/music.png"
 
 # Play the next track
 play_next() {
-    playerctl next
+    playerctl -p spotify next
     show_music_notification
 }
 
 # Play the previous track
 play_previous() {
-    playerctl previous
+    playerctl -p spotify previous
     show_music_notification
 }
 
 # Toggle play/pause
 toggle_play_pause() {
-    playerctl play-pause
+    playerctl -p spotify play-pause
     show_music_notification
 }
 
 # Stop playback
 stop_playback() {
-    playerctl stop
+    playerctl -p spotify stop
     notify-send -e -u low -i $music_icon " Playback:" " Stopped"
 }
 
 # Display notification with song information
 show_music_notification() {
-    status=$(playerctl status)
+    status=$(playerctl -p spotify status)
     if [[ "$status" == "Playing" ]]; then
-        song_title=$(playerctl metadata title)
-        song_artist=$(playerctl metadata artist)
+        song_title=$(playerctl -p spotify metadata title)
+        song_artist=$(playerctl -p spotify metadata artist)
         notify-send -e -u low -i $music_icon "Now Playing:" "$song_title by $song_artist"
     elif [[ "$status" == "Paused" ]]; then
         notify-send -e -u low -i $music_icon " Playback:" " Paused"

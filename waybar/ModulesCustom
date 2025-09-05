@@ -83,7 +83,7 @@
 	"return-type": "json",
 	"max-length": 25,
 	"player": "spotify",
-	"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+	"exec": "playerctl -p spotify -a metadata --format '{\"text\": \"{{artist}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
 	"on-click-middle": "playerctl -p spotify play-pause",
 	"on-click": "playerctl -p spotify next",
 	"on-click-right": "playerctl -p spotify previous",

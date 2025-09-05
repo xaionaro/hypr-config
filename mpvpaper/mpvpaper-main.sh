@@ -20,8 +20,8 @@ while true; do
         convert "$FILEPATH.frame0-pre.png" -resize 3840x2160 "$FILEPATH.frame0.png"
         rm -f "$FILEPATH.frame0-pre.png"
     fi
-    swww img --transition-fps 10 --transition-duration 5 --transition-type fade --outputs "$OUTPUTS" "$FILEPATH.frame0.png"
-    sleep 2 &
+    swww img --transition-fps 60 --transition-duration 4 --transition-type fade --outputs "$OUTPUTS" "$FILEPATH.frame0.png"
+    sleep 4 &
     if ! [[ -f "$FILEPATH.frame_eof.png" ]]; then
         ffmpeg -sseof -1 -i "$FILEPATH" -update 1 "$FILEPATH.frame_eof-pre.png"
         convert "$FILEPATH.frame_eof-pre.png" -resize 3840x2160 "$FILEPATH.frame_eof.png"
