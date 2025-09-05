@@ -7,7 +7,7 @@
 {
 "custom/weather": {
 	"format": "{}",
-	"format-alt": "{alt}: {}",
+	"format-alt": "{alt}: {text}",
 	"format-alt-click": "click",
 	"interval": 3600,
 	"return-type": "json",
