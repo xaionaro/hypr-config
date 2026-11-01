@@ -71,7 +71,8 @@ tooltip {
 }
 
 #taskbar button.active,
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.visible {
     color: @textcolor1;
     background: @workspacesbackground2;
     border-radius: 4px;

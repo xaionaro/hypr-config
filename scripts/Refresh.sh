@@ -14,12 +14,23 @@ file_exists() {
     fi
 }
 
-# Kill already running processes
+# Kill already running processes and their long-lived module children. Waybar
+# custom modules (playerctl, swaync-client, cava) otherwise become orphans and
+# survive every refresh.
+kill_tree() {
+    local root="$1"
+    local child
+    while read -r child; do
+        [ -n "$child" ] && kill_tree "$child"
+    done < <(pgrep -P "$root" 2>/dev/null || true)
+    kill -TERM "$root" 2>/dev/null || true
+}
+
 _ps=(waybar rofi swaync ags)
 for _prs in "${_ps[@]}"; do
-    if pidof "${_prs}" >/dev/null; then
-        pkill "${_prs}"
-    fi
+    while read -r _pid; do
+        [ -n "$_pid" ] && kill_tree "$_pid"
+    done < <(pgrep -x "${_prs}" 2>/dev/null || true)
 done
 
 # added since wallust sometimes not applying

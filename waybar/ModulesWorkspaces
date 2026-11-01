@@ -11,7 +11,6 @@
 	"all-outputs": false,
 	"format": "{icon}",
 	"show-special": false,
-	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"persistent-workspaces": {
@@ -28,7 +27,6 @@
 	"all-outputs": false,
 	"format": "{icon}",
 	"show-special": false,
-	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"persistent-workspaces": {
@@ -52,7 +50,6 @@
 	"active-only": false,
 	"all-outputs": false,
 	"format": "{icon}",
-	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"show-special": false,
@@ -94,7 +91,6 @@
 	"all-outputs": false,
 	"format": "{icon}",
 	"show-special": false,
-	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"persistent-workspaces": {
@@ -120,7 +116,6 @@
 	"format": " {name} {icon} ",
 	//"format": " {icon} ",
 	"show-special": false,
-	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"all-outputs": false,
@@ -146,7 +141,6 @@
 	"all-outputs": false,
 	"format": "{icon}",
 	"show-special": false,
-	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"persistent-workspaces": {
@@ -172,7 +166,6 @@
 	"warp-on-scroll": false,
 	"sort-by-number": true,
 	"show-special": false,
-	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	/*"persistent-workspaces": {
@@ -183,9 +176,6 @@
 	"format-window-separator": " ",
 	"window-rewrite-default": " ",
 	"window-rewrite": {		
-		"title<.*amazon.*>": " ",
-		"title<.*reddit.*>": " ",
-
 		"class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser|[Cc]achy-browser>": " ",
 		"class<zen>": "󰰷 ",
 		"class<waterfox|waterfox-bin>": " ",
@@ -202,51 +192,30 @@
 
 		"class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
 		"class<eu.betterbird.Betterbird>": " ",
-		"title<.*gmail.*>": "󰊫 ",
-
 		"class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop|Element>": "🗪",
 		"class<discord|[Ww]ebcord|Vesktop>": " ",
-		"title<.*whatsapp.*>": " ",
-    "title<.*zapzap.*>": " ",
-		"title<.*messenger.*>": " ",
-		"title<.*facebook.*>": " ",
-		"title<.*reddit.*>": " ",
 
-
-		"title<.*ChatGPT.*>": "󰚩 ",
-		"title<.*deepseek.*>": "󰚩 ",
-		"title<.*qwen.*>": "󰚩 ",
 		"class<subl>": "󰅳 ",
 		"class<slack>": " ",
 
 		"class<mpv>": " ",
 		"class<celluloid|Zoom>": " ",
 		"class<Cider>": "󰎆 ",
-		"title<.*Picture-in-Picture.*>": " ",
-		"title<.*youtube.*>": " ",
 		"class<vlc>": "󰕼 ",
-		"title<.*cmus.*>": " ",
 		"class<[Ss]potify>": " ",
 
 		"class<virt-manager>": " ",
 		"class<.virt-manager-wrapped>": " ",
 		"class<virtualbox manager>": "💽 ",
-		"title<virtualbox>": "💽 ",
 		"class<remmina>": "🖥️ ",
 
 		"class<VSCode|code-url-handler|code-oss|[Cc]ode|codium|codium-url-handler|VSCodium>": "󰨞 ",
     "class<dev.zed.Zed>": "󰵁",
 		"class<codeblocks>": "󰅩 ",
-		"title<.*github.*>": " ",
 		"class<mousepad>": " ",
 		"class<libreoffice-writer>": " ",
 		"class<libreoffice-startcenter>": "󰏆 ",
 		"class<libreoffice-calc>": " ",
-		"title<.*nvim ~.*>": " ",
-		"title<.*vim.*>": " ",
-		"title<.*nvim.*>": " ",
-		"title<.*figma.*>": " ",
-		"title<.*jira.*>": " ",
 		"class<jetbrains-idea>": " ",
 
 		"class<obs|com.obsproject.Studio>": " ",

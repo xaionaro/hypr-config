@@ -14,19 +14,28 @@ for ((i = 0; i < bar_length; i++)); do
     dict+=";s/$i/${bar:$i:1}/g"
 done
 
-# Create cava config
-config_file="/tmp/bar_cava_config"
+# Create a private cava config for this Waybar instance. Multiple bars run this
+# script at once, so sharing one file and killing other cava processes races.
+config_dir="${XDG_RUNTIME_DIR:-/tmp}"
+config_file="$config_dir/waybar-cava-${PPID}.conf"
+cleanup() {
+    rm -f "$config_file"
+}
+trap cleanup EXIT INT TERM
+
 cat >"$config_file" <<EOF
 [general]
-# Older systems show significant CPU use with default framerate
-# Setting maximum framerate to 30  
+# Keep the animation smooth without making each Waybar bar wake up too often.
+# Four Waybar bars run this module, so a lower rate noticeably reduces CPU.
 # You can increase the value if you wish
-framerate = 30
+framerate = 20
 bars = 10
 
 [input]
-method = pulse
-source = auto
+# Capture Spotify's PipeWire node directly. The default sink monitor also
+# contains mpv, Firefox, and every other application playing audio.
+method = pipewire
+source = spotify
 
 [output]
 method = raw
@@ -34,9 +43,6 @@ raw_target = /dev/stdout
 data_format = ascii
 ascii_max_range = 7
 EOF
-
-# Kill cava if it's already running
-pkill -f "cava -p $config_file"
 
 # Read stdout from cava and perform substitution in a single sed command
 cava -p "$config_file" | sed -u "$dict"

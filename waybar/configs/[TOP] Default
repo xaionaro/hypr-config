@@ -24,7 +24,6 @@
 	"custom/separator#blank",
 	"custom/playerctl",
 	"custom/separator#blank_2",
-	"hyprland/window",
 	],
 
 "modules-center": [
